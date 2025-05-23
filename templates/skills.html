@@ -1,124 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-900">
-    <div class="max-w-3xl mx-auto px-4 py-12">
-        <!-- Simple Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-3xl font-semibold mb-2">Skills & Expertise</h1>
-            <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
-        </div>
+{% extends 'base.html' %}
+{% load static %}
 
-        <!-- Skills List - Simple and Clean -->
-        <div class="space-y-8">
-            <!-- Programming Languages -->
-            <div>
-                <h2 class="text-xl font-medium mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
-                    Programming Languages
-                </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">JavaScript</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">Python</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">TypeScript</div>
-                        <div class="text-sm text-gray-500">Intermediate</div>
-                    </div>
-                </div>
-            </div>
+{% block content %}
+<div class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 text-white">
+  <!-- Cyberpunk Scanlines Overlay -->
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    
 
-            <!-- Web Development -->
-            <div>
-                <h2 class="text-xl font-medium mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                    </svg>
-                    Web Development
-                </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">React</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">Node.js</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">HTML/CSS</div>
-                        <div class="text-sm text-gray-500">Expert</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Databases -->
-            <div>
-                <h2 class="text-xl font-medium mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-                    </svg>
-                    Databases
-                </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">MongoDB</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">PostgreSQL</div>
-                        <div class="text-sm text-gray-500">Intermediate</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">MySQL</div>
-                        <div class="text-sm text-gray-500">Intermediate</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tools -->
-            <div>
-                <h2 class="text-xl font-medium mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                    Tools
-                </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">Git</div>
-                        <div class="text-sm text-gray-500">Advanced</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">Docker</div>
-                        <div class="text-sm text-gray-500">Intermediate</div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                        <div class="font-medium">VS Code</div>
-                        <div class="text-sm text-gray-500">Expert</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- HUD Navigation -->
+    <div class="flex flex-wrap justify-center gap-2 mb-16">
+      <a href="?category=all"
+         class="px-4 py-2 rounded-sm text-sm font-mono tracking-wider transition-all duration-300
+                {% if selected_category == 'all' %}
+                bg-cyan-900/50 text-cyan-300 ring-1 ring-cyan-400
+                {% else %}
+                bg-dark-800 text-gray-400 hover:text-cyan-300 hover:ring-1 hover:ring-cyan-400
+                {% endif %}">
+        [ALL_UNITS]
+      </a>
+      {% for value, label in categories %}
+        <a href="?category={{ value }}"
+           class="px-4 py-2 rounded-sm text-sm font-mono tracking-wider transition-all duration-300
+                  {% if selected_category == value %}
+                  {% if value == 'frontend' %}bg-green-900/50 text-green-300 ring-1 ring-green-400
+                  {% elif value == 'backend' %}bg-blue-900/50 text-blue-300 ring-1 ring-blue-400
+                  {% elif value == 'database' %}bg-purple-900/50 text-purple-300 ring-1 ring-purple-400
+                  {% elif value == 'devops' %}bg-yellow-900/50 text-yellow-300 ring-1 ring-yellow-400
+                  {% else %}bg-cyan-900/50 text-cyan-300 ring-1 ring-cyan-400{% endif %}
+                  {% else %}
+                  bg-dark-800 text-gray-400 hover:text-cyan-300 hover:ring-1 hover:ring-cyan-400
+                  {% endif %}">
+          [{{ label|upper }}]
+        </a>
+      {% endfor %}
     </div>
-</body>
-</html>
+
+    <!-- Holographic Grid -->
+    <div class="flex flex-wrap justify-center gap-4 mx-auto mb-16 md:w-full lg:w-3/4">
+      {% for skill in skills %}
+      <div class="group relative h-40 w-40 bg-dark-800 rounded-sm border border-gray-900 overflow-hidden transition-all duration-300 hover:border-cyan-900 hover:shadow-[0_0_15px_-3px_rgba(34,211,238,0.3)]">
+        <!-- Holographic Effect -->
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #006262 1px, transparent 1px); background-size: 10px 10px;"></div>
+        
+        <!-- Skill Content -->
+        <div class="h-full w-full flex flex-col items-center justify-center p-4 relative z-10">
+          <div class="mb-3 flex items-center justify-center h-16 w-16 rounded-sm transition-all duration-500">
+            {% if skill.image %}
+              <img src="{{ skill.image.url }}" alt="{{ skill.name }}" 
+                   class="h-16 w-16 object-contain group-hover:grayscale-0 transition-all duration-500">
+            {% else %}
+              <span class="text-2xl font-mono text-gray-400 group-hover:text-cyan-300 transition-colors duration-500">
+                {{ skill.name|first|upper }}
+              </span>
+            {% endif %}
+          </div>
+          
+          <h3 class="text-xl font-mono text-center text-gray-400 group-hover:text-white transition-colors duration-500 tracking-wider">
+            {{ skill.name }}
+          </h3>
+        </div>
+        
+        <!-- Corner Brackets -->
+        <div class="absolute top-2 left-2 h-3 w-3 border-t border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute top-2 right-2 h-3 w-3 border-t border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute bottom-2 left-2 h-3 w-3 border-b border-l border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute bottom-2 right-2 h-3 w-3 border-b border-r border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </div>
+      {% empty %}
+      <div class="col-span-full text-center py-16">
+        <p class="text-gray-600 font-mono tracking-wider">[NO_DATA_LOADED]</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Glitch Effect */
+  .glitch {
+    position: relative;
+  }
+  .glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  .glitch::before {
+    color: #0ff;
+    z-index: -1;
+    animation: glitch-effect 3s infinite;
+  }
+  .glitch::after {
+    color: #f0f;
+    z-index: -2;
+    animation: glitch-effect 2s infinite reverse;
+  }
+  @keyframes glitch-effect {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+  }
+  
+  /* Holographic Flicker */
+  @keyframes holographic-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 0.8; }
+    20%, 22%, 24%, 55% { opacity: 0.2; }
+  }
+  .group:hover {
+    animation: holographic-flicker 5s infinite;
+  }
+</style>
+{% endblock %}
