@@ -44,7 +44,7 @@
         <div class="absolute inset-0 bg-gradient-to-br from-transparent via-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         <!-- Grid Pattern -->
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #006262 1px, transparent 1px); background-size: 10px 10px;"></div>
+        <div class="absolute inset-0 opacity-20 grid-pattern-bg"></div>
         
         <!-- Skill Content -->
         <div class="h-full w-full flex flex-col items-center justify-center p-4 relative z-10">
@@ -80,6 +80,12 @@
 </div>
 
 <style>
+  /* Grid Pattern Background */
+  .grid-pattern-bg {
+    background-image: radial-gradient(circle at center, #006262 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+
   /* Glitch Effect */
   .glitch {
     position: relative;

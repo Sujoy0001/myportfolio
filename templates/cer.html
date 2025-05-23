@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-300 mb-4">
+        CERTIFICATIONS
+      </h1>
+      <div class="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent max-w-md mx-auto"></div>
+    </div>
+
+    <!-- Category Navigation -->
+    <div class="flex flex-wrap justify-center gap-3 mb-16">
+      <a href="?category=all"
+         class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
+                {% if selected_category == 'all' %}
+                bg-blue-900 text-blue-300 ring-1 ring-blue-500
+                {% else %}
+                bg-gray-900 text-gray-400 hover:text-blue-300 hover:ring-1 hover:ring-blue-500
+                {% endif %}">
+        All
+      </a>
+      {% for value, label in categories %}
+        <a href="?category={{ value }}"
+           class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
+                  {% if selected_category == value %}
+                  bg-blue-900 text-blue-300 ring-1 ring-blue-500
+                  {% else %}
+                  bg-gray-900 text-gray-400 hover:text-blue-300 hover:ring-1 hover:ring-blue-500
+                  {% endif %}">
+          {{ label }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Certificates Grid - 2 Columns -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {% for certificate in certificates %}
+      <div class="bg-black rounded-xl border border-gray-800 overflow-hidden hover:border-blue-500 transition-all duration-300">
+        <!-- Full-width Certificate Image -->
+        <div class="w-full h-64 bg-gray-900 flex items-center justify-center p-8 border-b border-gray-800">
+          <img src="{{ certificate.image.url }}" alt="{{ certificate.title }}" 
+               class="max-w-full max-h-full object-contain">
+        </div>
+        
+        <!-- Certificate Details -->
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold text-white">{{ certificate.title }}</h3>
+            <span class="text-xs bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">
+              {{ certificate.get_category_display }}
+            </span>
+          </div>
+          
+          <p class="text-blue-300 text-sm mb-2">
+            <span class="text-gray-400">Issued by:</span> {{ certificate.issuing_organization }}
+          </p>
+          
+          <p class="text-gray-400 text-sm mb-4">
+            <span class="text-gray-400">Date:</span> {{ certificate.issue_date|date:"F Y" }}
+          </p>
+          
+          <!-- Skills -->
+          {% if certificate.skills %}
+          <div class="mb-4">
+            <p class="text-xs text-gray-500 mb-2">VALIDATED SKILLS:</p>
+            <div class="flex flex-wrap gap-2">
+              {% for skill in certificate.get_skills_list %}
+              <span class="text-xs bg-gray-900 text-blue-300 px-3 py-1 rounded-full border border-gray-800">
+                {{ skill }}
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          
+          <!-- Credential Links -->
+          <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+            {% if certificate.credential_id %}
+            <span class="text-xs text-gray-500">
+              ID: {{ certificate.credential_id }}
+            </span>
+            {% endif %}
+            
+            {% if certificate.credential_url %}
+            <a href="{{ certificate.credential_url }}" target="_blank" 
+               class="text-sm font-medium text-blue-400 hover:text-blue-300 flex items-center gap-2">
+              Verify Credential
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        
+        <!-- Blue Accent Bar -->
+        <div class="h-1 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+      </div>
+      {% empty %}
+      <div class="lg:col-span-2 text-center py-16">
+        <div class="inline-block bg-gray-900 rounded-xl border border-gray-800 px-8 py-6">
+          <p class="text-gray-400">No certificates found</p>
+          <p class="text-sm text-gray-600 mt-2">Try selecting a different category</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

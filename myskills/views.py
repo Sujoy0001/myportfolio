@@ -7,7 +7,7 @@ def myskills(request):
     selected_category = request.GET.get('category', 'all')
     
     if selected_category == 'all':
-        skills = Skill.objects.all()
+        skills = Skill.objects.all().order_by('order')
     else:
         skills = Skill.objects.filter(category=selected_category)
     

@@ -93,21 +93,21 @@
             <!-- Navigation Links -->
             <nav class="flex-1 flex flex-col p-4 space-y-2">
                 <a href="{% url 'home' %}" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
-                    <i class="fa-solid fa-house-chimney w-6 mr-3 text-center text-gray-400 group-hover:text-indigo-400"></i>
+                    <i class="fa fa-house-chimney w-6 mr-3 text-center text-gray-400 group-hover:text-indigo-400"></i>
                     <span>Home</span>
                     <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-indigo-400"></i>
                 </a>
                 <a href="{% url 'myskills' %}" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
-                    <i class="fa-solid fa-code mr-3"></i>
+                    <i class="fa fa-code mr-3"></i>
                     <span>Skills</span>
                     <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-indigo-400"></i>
                 </a>
-                <a href="#" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
+                <a href="{% url 'projects' %}" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
                     <i class="fa-solid fa-layer-group mr-3"></i>
                     <span>Projects</span>
                     <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-indigo-400"></i>
                 </a>
-                <a href="#" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
+                <a href="{% url 'certifications' %}" class="flex items-center px-2 py-2 rounded-lg text-gray-300 hover:bg-dark-700 hover:text-indigo-400 text-lg transition-all group">
                     <i class="fa-solid fa-table-list mr-3"></i>
                     <span>Certifications</span>
                     <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-indigo-400"></i>
@@ -149,7 +149,16 @@
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-40 hidden"></div>
 
     <!-- Main Content -->
-    <main class="pt-20 min-h-screen">  <!-- pt-20 to account for fixed header -->
+    <main class="pt-20 min-h-screen">
+        <!-- pt-20 to account for fixed header -->
+
+        <style>
+            main {
+                background-image: linear-gradient(rgba(187, 187, 187, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+                background-size: 20px 20px;
+                background-position: 0 0, 10px 10px;
+            }
+        </style>
         {% block content %}
         {% endblock %}
     </main>

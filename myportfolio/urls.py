@@ -21,9 +21,14 @@ from django.conf import settings
 from django.conf.urls import include
 from user.views import *
 from myskills.views import *
+from myproject.views import *
+from review.views import *
+from Certifications.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('myskills/', myskills, name='myskills'),
+    path('projects/', projects, name='projects'),
+    path('certifications/', certificates_view, name='certifications'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

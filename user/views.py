@@ -11,7 +11,9 @@ def home(request):
     Skills = Skill.objects.all()
     reviews = Review.objects.filter(is_active=True).order_by('-date')[:3]
     total_projects = Project.objects.count()
+    total_skills = Skills.count()
     faq = FAQ.objects.all()
+    code_contributions = Project.objects.count()//2
     
     context = {
         'featured_projects': projects,
@@ -19,6 +21,8 @@ def home(request):
         'user': user,
         'skills': Skills,
         'total_projects': total_projects,
+        'total_skills': total_skills,
+        'code_contributions': code_contributions,
         'faqs': faq,
     }
     return render(request, 'index.html', context)
